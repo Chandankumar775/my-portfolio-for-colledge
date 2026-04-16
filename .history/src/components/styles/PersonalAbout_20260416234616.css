@@ -1,0 +1,138 @@
+.personal-about-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 5%;
+  z-index: 10;
+}
+
+.personal-glass-card {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.05); /* stronger glass */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.personal-glass-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.personal-glass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(238, 130, 238, 0.2) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.personal-photo-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  z-index: 2;
+  box-shadow: 0 0 80px rgba(238, 130, 238, 0.6);
+  animation: floatAvatar 6s ease-in-out infinite;
+}
+
+.personal-photo-container::after {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(238,130,238,0.8), transparent);
+  z-index: -1;
+  filter: blur(15px);
+  animation: spinGlow 10s linear infinite;
+}
+
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floatAvatar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.personal-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.personal-photo:hover {
+  transform: rotate(10deg) scale(1.1);
+  border-color: rgba(238, 130, 238, 0.9);
+}
+
+.personal-content {
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  max-width: 900px;
+}
+
+.personal-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #ffffff, #ee82ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.personal-description {
+  font-size: 1.4rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 768px) {
+  .personal-glass-card {
+    padding: 50px 20px;
+    border-radius: 30px;
+  }
+  .personal-photo-container {
+    width: 220px;
+    height: 220px;
+  }
+  .personal-title {
+    font-size: 2.5rem;
+  }
+  .personal-description {
+    font-size: 1.15rem;
+  }
+}
