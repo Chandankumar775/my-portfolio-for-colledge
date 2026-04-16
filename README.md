@@ -4,8 +4,6 @@ Hey there! ?? Welcome to the repository for my personal portfolio. This is a hig
 
 Feel free to explore the codebase, discover how the 3D animations work, and get inspired for your own creations! ?
 
-![Portfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
-
 ---
 
 ## ??? Tech Stack
@@ -35,7 +33,7 @@ npm run dev
 
 ## ?? License & Usage
 This project is shared for **learning and inspiration only** and operates under the Personal Portfolio License (PPL) v1.0. 
-Please see the `LICENSE` file for details — take inspiration, but always build your own creative version! 
+Please see the `LICENSE` file for details ï¿½ take inspiration, but always build your own creative version! 
 
 <br>
 <div align="center">
